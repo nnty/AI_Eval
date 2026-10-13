@@ -101,8 +101,7 @@ def test_customer_service_tool_correctness(user_input, expected_tool):
     tool_metric = ToolCorrectnessMetric(
         threshold=1.0,
     )
-    alignment_metric = PromptAli
-gnmentMetric(
+    alignment_metric = PromptAlignmentMetric(
         prompt_instructions=SYSTEM_PROMPT,
         threshold=0.7,
         model="gpt-4o-mini",
