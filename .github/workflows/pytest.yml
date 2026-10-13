@@ -39,4 +39,4 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          pytest -v test_tool_correctness.py
+          python -m pytest -v tests/test_tool_correctness.py
