@@ -35,4 +35,4 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          PYTHONPATH=. python -m pytest -v tests/
+          PYTHONPATH=. python -m pytest -v tests/ -s --tb=short
