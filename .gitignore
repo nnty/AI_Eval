@@ -1,0 +1,23 @@
+# Environment & Secrets
+.env*
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Testing & Framework Logs
+.pytest_cache/
+.deepeval*
+.coverage
+htmlcov/
+
+# PyCharm / JetBrains IDE Settings
+.idea/
+*.iws
+*.iml
