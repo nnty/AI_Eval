@@ -18,15 +18,15 @@ def test_escalation_tool_invoked():
 
     result = run_agent(user_input, system_prompt)
 
-    # 1. Map the raw OpenAI tool calls into DeepEval's ToolCall format
+
+    # 1. Map the raw agent tool calls into DeepEval's ToolCall format
     deepeval_tools_called = [
         ToolCall(
-            name=tc.function.name,
-            input_parameters=json.loads(tc.function.arguments) if tc.function.arguments else {}
+            name=tc["name"],
+            input_parameters=json.loads(tc["arguments"]) if isinstance(tc["arguments"], str) else tc["arguments"]
         )
         for tc in result["tools_called"]
     ]
-
     # 2. Define the tool(s) you assert the agent MUST call
     expected_tools = [
         ToolCall(name="escalate_to_human")
